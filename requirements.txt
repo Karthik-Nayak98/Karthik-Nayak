@@ -1,6 +1,6 @@
 flask
 wit
 gunicorn
-newsapi
-newsapi-python
+newsapi==0.1.1
+newsapi-python==0.2.3
 pymessenger
