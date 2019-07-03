@@ -1,6 +1,5 @@
 from flask import Flask, request
 from pymessenger import Bot
-#from chatutils import witResponse, getNews
 from wit import Wit
 from newsapi import NewsApiClient
 import os
@@ -85,17 +84,12 @@ def message():
                     if 'text' in messaging_event['message']:
                         message = messaging_event['message']['text']
                     else:
-                        message = 'no message'
-                    #response = "you said " + message
+                        message = 'no message'            
                     response = getNews(witResponse(message))
-                    # bot.send_text_message(senderId,"response")
                     bot.send_generic_message(senderId, response)
     print(senderId, recipientId, response)
-    return "HI", 200
-
+    return "success", 200
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-# Facebook Authentication
-#
